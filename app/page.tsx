@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { Suspense } from "react";
 import Spotify from "../components/Spotify";
