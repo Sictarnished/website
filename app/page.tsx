@@ -1,10 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Suspense } from "react";
-import Spotify from "../components/Spotify";
 import Image from "next/image";
-import SpotifySkeleton from "../components/skeletons/Spotifyskel";
-import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -102,7 +99,6 @@ export default function Home() {
             </a>
           </div>
         </motion.div>
-        <Footer />
       </footer>
     </div>
   );
