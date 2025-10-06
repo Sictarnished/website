@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Suspense } from "react";
 import Spotify from "../components/Spotify";
 import Image from "next/image";
+import SpotifySkeleton from "../components/skeletons/Spotify";
 
 
 export default function Home() {
@@ -23,7 +25,9 @@ export default function Home() {
           </p>
         </motion.div>
       </section>
-      <Spotify />
+      <Suspense fallback={<SpotifySkeleton />}>
+        <Spotify />
+      </Suspense>
 
       {/* Info Sections */}
       <main className="flex flex-col items-center gap-10 sm:gap-12 mt-20 px-6 pb-20">
