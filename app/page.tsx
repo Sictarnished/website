@@ -1,102 +1,106 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Spotify from "../components/Spotify";
 import Image from "next/image";
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-200 dark:from-gray-900 dark:via-indigo-950 dark:to-gray-800 text-gray-900 dark:text-gray-100 font-sans flex flex-col">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center pt-20 sm:pt-32 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Federico
+          </h1>
+          <p className="text-lg sm:text-xl max-w-2xl mx-auto">
+            16-year-old developer, gamer, and creative mind. Always chasing innovation, creativity, and a bit of chaos ✨
+          </p>
+        </motion.div>
+      </section>
+      <Spotify />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Info Sections */}
+      <main className="flex flex-col items-center gap-10 sm:gap-12 mt-20 px-6 pb-20">
+        {[
+          {
+            title: "Passions",
+            text: "Video games (especially Kingdom Hearts) proud fan of Jackass, technology, programming, content creation, and scientific experiments. I love exploring the intersection between creativity and logic.",
+            color: "from-purple-500 to-indigo-500",
+          },
+          {
+            title: "Programming Skills",
+            text: "TypeScript, JavaScript, HTML, CSS, Next.js, Tailwind, Svelte, Astro, React, C++, and Godot Engine. Always eager to learn and build something new.",
+            color: "from-blue-500 to-cyan-400",
+          },
+          {
+            title: "Certifications & Activities",
+            text: "Cambridge English B2. Frequent attendee at conferences at the University of Messina and an active participant in Linux Day events.",
+            color: "from-emerald-500 to-lime-400",
+          },
+          {
+            title: "Favorite Quote",
+            text: `"The heart may be weak, and sometimes it may even give in. But I've learned that deep down, there's a light that never goes out." – Kingdom Hearts`,
+            color: "from-pink-500 to-rose-500",
+          },
+        ].map((section, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: i * 0.2 }}
+            viewport={{ once: true }}
+            className={`max-w-3xl w-full bg-gradient-to-r ${section.color} p-[2px] rounded-2xl shadow-xl`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-10">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3">{section.title}</h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{section.text}</p>
+            </div>
+          </motion.div>
+        ))}
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+      {/* Footer */}
+      <footer className="mt-auto border-t border-white/10 backdrop-blur-md py-6 text-center text-sm text-gray-600 dark:text-gray-400">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <p>Built with ❤️ using Next.js, Tailwind & Framer Motion. Thanks for visiting!</p>
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/Sictarnished"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-400 transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://vercel.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-400 transition-colors"
+            >
+              Vercel
+            </a>
+            <a
+              href="https://tailwindcss.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-400 transition-colors"
+            >
+              Tailwind
+            </a>
+          </div>
+        </motion.div>
       </footer>
     </div>
   );
