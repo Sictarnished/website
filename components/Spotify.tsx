@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import type { SpotifyResponse } from "@/types/spotify";
 import { ofetch } from "ofetch";
 import getConfig from "next/config";
-
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = publicRuntimeConfig.baseUrl;
 
-export default function Spotify() {
-  const [data, setData] = useState<SpotifyResponse | null>(null);
-
-  useEffect(() => {
-    ofetch<SpotifyResponse>(`${baseUrl}/api/spotify`)
-      .then(setData)
-      .catch(console.error);
-  }, []);
+export default async function Spotify() {
+  const data = await ofetch<SpotifyResponse>(`${baseUrl}/api/spotify`);
 
   return (
     <div className="border p-3 dark:border-zinc-700 dark:bg-zinc-950">
