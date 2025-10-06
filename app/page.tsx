@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Suspense } from "react";
 import Spotify from "../components/Spotify";
 import Image from "next/image";
-import SpotifySkeleton from "../components/skeletons/Spotify";
+import SpotifySkeleton from "../components/skeletons/Spotifyskel";
 import Footer from "@/components/Footer";
 
 

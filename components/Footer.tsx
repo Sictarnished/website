@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Spotify from "./Spotify";
-import SpotifySkeleton from "./skeletons/Spotify";
+import SpotifySkeleton from "./skeletons/Spotifyskel";
 
 export default function Footer() {
   return (
