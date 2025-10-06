@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Spotify from "../components/Spotify";
 import Image from "next/image";
 import SpotifySkeleton from "../components/skeletons/Spotify";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -24,9 +25,6 @@ export default function Home() {
           </p>
         </motion.div>
       </section>
-      <Suspense fallback={<SpotifySkeleton />}>
-        <Spotify />
-      </Suspense>
 
       {/* Info Sections */}
       <main className="flex flex-col items-center gap-10 sm:gap-12 mt-20 px-6 pb-20">
@@ -104,6 +102,7 @@ export default function Home() {
             </a>
           </div>
         </motion.div>
+        <Footer />
       </footer>
     </div>
   );
