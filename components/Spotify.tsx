@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import type { SpotifyResponse } from "@/types/spotify";
 import { ofetch } from "ofetch";
