@@ -14,14 +14,14 @@ export default function Footer() {
         If you are interested in seeing how this website was built, the entire
         source code can be found on{" "}
         <a
-          href="https://github.com/gigantino/www"
+          href=""
           className="dark:text-white underline"
         >
           GitHub
         </a>{" "}
         under the{" "}
         <a
-          href="https://github.com/gigantino/www/blob/main/LICENSE"
+          href=""
           className="dark:text-white underline"
         >
           MIT license
