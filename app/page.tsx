@@ -17,7 +17,7 @@ export default function Home() {
 
   const item = {
     hidden: { opacity: 0, y: 12 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.5 } },
+    show: { opacity: 1, y: 0, transition: { ease: [0.22, 1, 0.36, 1], duration: 0.5 } },
   };
 
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <motion.section
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-6"
         >
           <div className="flex items-center gap-4">
@@ -104,7 +104,7 @@ export default function Home() {
         <motion.aside
           initial={{ opacity: 0, x: 30, scale: 0.98 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="bg-white/8 backdrop-blur-md border border-white/10 rounded-3xl p-6 shadow-2xl"
         >
           <div className="flex items-center justify-between gap-4">
@@ -130,7 +130,7 @@ export default function Home() {
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${s.level}%` }}
-                    transition={{ duration: 0.9, ease: "easeOut" }}
+                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                     className="h-full bg-gradient-to-r from-yellow-300 to-pink-400 rounded-full"
                   />
                 </div>
@@ -144,9 +144,9 @@ export default function Home() {
               <div className="text-white/70 text-xs">Experiments, video editing, streaming, and endless creativity</div>
             </div>
 
-            <motion.div
+              <motion.div
               animate={{ rotate: [0, 4, -4, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              transition={{ repeat: Infinity, duration: 6, ease: [0.42, 0, 0.58, 1] }}
               className="w-20 h-20 rounded-xl bg-gradient-to-br from-indigo-600 to-pink-500 flex items-center justify-center shadow-lg"
             >
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
