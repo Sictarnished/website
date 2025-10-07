@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { Suspense } from "react";
 import Image from "next/image";
 
 
