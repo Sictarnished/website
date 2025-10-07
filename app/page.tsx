@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function Home() {
   const skills = [
@@ -10,14 +10,22 @@ export default function Home() {
     { name: "Python", level: 65 },
   ];
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.08 },
+    },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 12 },
-    show: { opacity: 1, y: 0, transition: { ease: [0.22, 1, 0.36, 1], duration: 0.5 } },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { ease: [0.42, 0, 0.58, 1] as any, duration: 0.5 },
+    },
   };
 
   return (
@@ -27,7 +35,7 @@ export default function Home() {
         <motion.section
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] as any }}
           className="space-y-6"
         >
           <div className="flex items-center gap-4">
@@ -65,8 +73,7 @@ export default function Home() {
             transition={{ delay: 0.15, duration: 0.6 }}
           >
             I create elegant, fast web experiences with <span className="font-semibold">Next.js</span> and{" "}
-            <span className="font-semibold">TypeScript</span>.  
-            I also love video editing, game design, and experimental science.
+            <span className="font-semibold">TypeScript</span>. I also love video editing, game design, and experimental science.
           </motion.p>
 
           <div className="flex gap-3">
@@ -94,9 +101,15 @@ export default function Home() {
             animate="show"
             variants={container}
           >
-            <motion.span variants={item} className="bg-white/10 px-3 py-2 rounded-full border border-white/20">Nerdie</motion.span>
-            <motion.span variants={item} className="bg-white/10 px-3 py-2 rounded-full border border-white/20">Movie lover</motion.span>
-            <motion.span variants={item} className="bg-white/10 px-3 py-2 rounded-full border border-white/20">Kingdom Hearts Fan</motion.span>
+            <motion.span variants={item} className="bg-white/10 px-3 py-2 rounded-full border border-white/20">
+              Nerdie
+            </motion.span>
+            <motion.span variants={item} className="bg-white/10 px-3 py-2 rounded-full border border-white/20">
+              Movie lover
+            </motion.span>
+            <motion.span variants={item} className="bg-white/10 px-3 py-2 rounded-full border border-white/20">
+              Kingdom Hearts Fan
+            </motion.span>
           </motion.div>
         </motion.section>
 
@@ -104,7 +117,7 @@ export default function Home() {
         <motion.aside
           initial={{ opacity: 0, x: 30, scale: 0.98 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as any }}
           className="bg-white/8 backdrop-blur-md border border-white/10 rounded-3xl p-6 shadow-2xl"
         >
           <div className="flex items-center justify-between gap-4">
@@ -114,8 +127,12 @@ export default function Home() {
             </div>
 
             <div className="text-right text-sm text-white/60">
-              <div>English Level: <span className="font-semibold">B2</span></div>
-              <div className="mt-2">Age: <span className="font-semibold">16</span></div>
+              <div>
+                English Level: <span className="font-semibold">B2</span>
+              </div>
+              <div className="mt-2">
+                Age: <span className="font-semibold">16</span>
+              </div>
             </div>
           </div>
 
@@ -130,7 +147,7 @@ export default function Home() {
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${s.level}%` }}
-                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] as any }}
                     className="h-full bg-gradient-to-r from-yellow-300 to-pink-400 rounded-full"
                   />
                 </div>
@@ -144,9 +161,9 @@ export default function Home() {
               <div className="text-white/70 text-xs">Experiments, video editing, streaming, and endless creativity</div>
             </div>
 
-              <motion.div
+            <motion.div
               animate={{ rotate: [0, 4, -4, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: [0.42, 0, 0.58, 1] }}
+              transition={{ repeat: Infinity, duration: 6, ease: [0.42, 0, 0.58, 1] as any }}
               className="w-20 h-20 rounded-xl bg-gradient-to-br from-indigo-600 to-pink-500 flex items-center justify-center shadow-lg"
             >
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
@@ -172,5 +189,3 @@ export default function Home() {
     </main>
   );
 }
-
-
