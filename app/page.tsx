@@ -1,8 +1,6 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import { Suspense } from "react";
-import Spotify from "../components/Spotify";
-import SpotifySkeleton from "../components/skeletons/Spotify";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const skills = [
@@ -180,6 +178,8 @@ export default function Home() {
         </motion.aside>
       </div>
 
+      <Footer />
+
       {/* Footer small */}
       <motion.footer
         initial={{ opacity: 0 }}
@@ -189,10 +189,6 @@ export default function Home() {
       >
         © 2025 Federico — Built with ❤️ using Next.js, Tailwind & Framer Motion
       </motion.footer>
-
-      <Suspense fallback={<SpotifySkeleton />}>
-        <Spotify />
-      </Suspense>
     </main>
   );
 }

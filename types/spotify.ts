@@ -4,12 +4,10 @@ export type SpotifyResponse =
       href: string;
       name: string;
       thumbnailUrl: string;
-      artists: {
-        name: string;
-        href: string;
-      }[];
+      artists: { name: string; href: string }[];
     }
   | {
       isListening: false;
       name: null;
     };
+
